@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { compose, createStore } from 'redux';
+import { compose, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router';
 import { createBrowserHistory } from 'history';
-import { syncHistoryWithStore } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux';
+import thunk from 'redux-thunk';
 
 import './styles/index.scss';
 import reportWebVitals from './reportWebVitals';
@@ -15,7 +16,8 @@ import TvShowEpisodeDetailPage from './components/TvShowEpisodeDetailPage';
 const store = createStore(
     rootReducer,
     compose(
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        applyMiddleware(thunk),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     ),
 );
 

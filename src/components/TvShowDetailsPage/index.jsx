@@ -3,7 +3,7 @@ import {useEffect} from 'react';
 import {connect} from 'react-redux';
 
 import TvShowDescriptionSection from './TvShowDescriptionSection';
-import { TV_SHOW_DETAILS__FETCH } from './tvShowDetailsActionTypes';
+import {fetchTvShowDetails} from './tvShowDetailsActions';
 
 const tvShowId = 6771;
 
@@ -22,9 +22,7 @@ const TvShowDetailsPage = ({ onComponentDidMount }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onComponentDidMount: (tvShowId) => dispatch({
-            type: TV_SHOW_DETAILS__FETCH, payload: tvShowId,
-        }),
+        onComponentDidMount: (tvShowId) => dispatch(fetchTvShowDetails(tvShowId)),
     }
 };
 

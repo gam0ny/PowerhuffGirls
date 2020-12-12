@@ -33,7 +33,7 @@ const Image = ({className, src, width, height}) => {
 
 Image.propTypes = {
     className: PropTypes.string,
-    src: PropTypes.string.isRequired,
+    src: PropTypes.string,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
 }
