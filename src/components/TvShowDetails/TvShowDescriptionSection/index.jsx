@@ -17,7 +17,7 @@ const TvShowDescriptionSection = ({title, coverImageSrc, description}) => (
     </article>
 );
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
     return {
         title: 'The Powerpuff Girls',
         coverImageSrc: 'http://static.tvmaze.com/uploads/images/medium_portrait/60/151357.jpg',

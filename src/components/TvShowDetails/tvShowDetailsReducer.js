@@ -8,4 +8,4 @@ const actions = {};
 
 export function tvShowDetailsReducer(state = initialState, action){
     return runAction(actions, state, action);
-};
+}

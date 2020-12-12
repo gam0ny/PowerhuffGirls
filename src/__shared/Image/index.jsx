@@ -21,9 +21,10 @@ const Image = ({className, src, width, height}) => {
     return (
         <figure className={figureClassNames}
                 style={{minWidth: width, minHeight: height}}>
-            {loadFailed && <img className='image-wrapper__default-image' src={ noImageUrl }/>}
+            {loadFailed && <img className='image-wrapper__default-image' src={ noImageUrl } alt={'default image'}/>}
             <img className={imageClassNames}
                  src={src}
+                 alt={'target image'}
                  onLoad={ () => setIsLoaded(true) }
                  onError={ () => { setIsLoaded(false); setLoadFailed(true)} }
             />
