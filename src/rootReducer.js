@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import { routerReducer } from 'react-router-redux';
 
-import { tvShowDetailsReducer } from "./TvShowDetails/tvShowDetailsReducer";
-import { tvShowEpisodeDetailReducer } from "./TvShowEpisodeDetail/tvShowEpisodeReducer";
+import { tvShowDetailsReducer } from "./components/TvShowDetails/tvShowDetailsReducer";
+import { tvShowEpisodeDetailReducer } from "./components/TvShowEpisodeDetail/tvShowEpisodeReducer";
 
 export const rootReducer = combineReducers({
     routing: routerReducer,

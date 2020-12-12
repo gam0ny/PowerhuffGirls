@@ -1,15 +1,18 @@
 import { connect } from 'react-redux';
+import Image from '../../../__shared/Image';
 
 const TvShowDescriptionSection = ({title, coverImageSrc, description}) => (
     <article className="tv-show-description">
         <h1>{title}</h1>
         <section className="tv-show-description__container">
-            <figure className="tv-show-description__image-cover tv-show-description__image-wrapper">
-                <img className="tv-show-description__image"
-                     src={coverImageSrc}
-                     alt={title}/>
-            </figure>
-            <section className="tv-show-description__description" dangerouslySetInnerHTML={{ __html: description }}></section>
+            <Image className="tv-show-description__image-cover"
+                   src={coverImageSrc}
+                   width={210}
+                   height={295}
+            />
+            <section className="tv-show-description__description"
+                     dangerouslySetInnerHTML={{ __html: description }}>
+            </section>
         </section>
     </article>
 );

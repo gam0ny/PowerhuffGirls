@@ -1,4 +1,4 @@
-import {runAction} from '../reducerHelper';
+import {runAction} from '../../reducerHelper';
 
 const initialState = {
 
