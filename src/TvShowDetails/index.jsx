@@ -1,5 +1,9 @@
+import TvShowDescriptionSection from './TvShowDescriptionSection';
+
 const TvShowDetails = () => (
-    <div>This is a tv show details page</div>
+    <main>
+        <TvShowDescriptionSection />
+    </main>
 );
 
 export default TvShowDetails;

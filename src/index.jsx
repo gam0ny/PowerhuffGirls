@@ -6,7 +6,7 @@ import { Router, Route } from 'react-router';
 import { createBrowserHistory } from 'history';
 import { syncHistoryWithStore } from 'react-router-redux'
 
-import './index.css';
+import './style/index.scss';
 import reportWebVitals from './reportWebVitals';
 import { rootReducer } from './rootReducer';
 import TvShowDetails from './TvShowDetails';

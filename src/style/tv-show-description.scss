@@ -1,0 +1,17 @@
+.tv-show-description {
+    padding: 0 30px;
+
+    &__container {
+        display: flex;
+    }
+
+    &__image-cover {
+        padding: 0 30px 0 0;
+        margin: 0;
+    }
+
+    &__description * {
+        padding: 0;
+        margin: 0;
+    }
+}
