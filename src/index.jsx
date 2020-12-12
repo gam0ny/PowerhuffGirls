@@ -9,8 +9,8 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import './styles/index.scss';
 import reportWebVitals from './reportWebVitals';
 import { rootReducer } from './rootReducer';
-import TvShowDetails from './components/TvShowDetails';
-import TvShowEpisodeDetail from './components/TvShowEpisodeDetail';
+import TvShowDetailsPage from './components/TvShowDetailsPage';
+import TvShowEpisodeDetailPage from './components/TvShowEpisodeDetailPage';
 
 const store = createStore(
     rootReducer,
@@ -25,8 +25,8 @@ ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
         <Router history={reduxHistory}>
-            <Route path={"/"} component={TvShowDetails} />
-            <Route path={"/episode"} component={TvShowEpisodeDetail}/>
+            <Route path={"/"} component={TvShowDetailsPage} />
+            <Route path={"/episode"} component={TvShowEpisodeDetailPage}/>
         </Router>
       </Provider>
   </React.StrictMode>,
