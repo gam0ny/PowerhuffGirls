@@ -18,6 +18,8 @@ const Image = ({className, src, width, height}) => {
         { 'image-wrapper__image--hidden': !isLoaded }
     );
 
+    if(!src) return null;
+
     return (
         <figure className={figureClassNames}
                 style={{minWidth: width, minHeight: height}}>
