@@ -10,11 +10,8 @@ actions[TV_SHOW__EPISODES__FETCH] = (state) => {
 }
 
 actions[TV_SHOW__EPISODES__UPDATE] = (state, action) => {
-    return {
-        ...state,
-        ...action.payload,
-    }
-};
+    return action.payload.concat();
+}
 
 export function tvShowEpisodesReducer(state = initialState, action) {
     return runAction(actions, state, action);

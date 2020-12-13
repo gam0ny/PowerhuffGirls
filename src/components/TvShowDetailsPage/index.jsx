@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import TvShowDescriptionSection from './TvShowDescriptionSection';
 import { fetchTvShowDetails, fetchTvShowEpisodes } from './tvShowDetailsActions';
+import TvShowEpisodesSection from './TvShowEpisodeListSection';
 
 const tvShowId = 6771;
 
@@ -15,7 +16,8 @@ const TvShowDetailsPage = ({ onComponentDidMount }) => {
 
     return (
         <main>
-            <TvShowDescriptionSection/>
+            <TvShowDescriptionSection />
+            <TvShowEpisodesSection />
         </main>
     );
 };
