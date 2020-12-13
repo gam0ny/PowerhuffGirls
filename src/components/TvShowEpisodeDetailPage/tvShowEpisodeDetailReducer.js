@@ -1,7 +1,6 @@
 import { runAction } from '../../reducerHelper';
 import {
     TV_SHOW__EPISODE__FETCH,
-    TV_SHOW__EPISODE__FETCH_COMPLETED,
     TV_SHOW__EPISODE__UPDATE,
 } from './tvShowEpisodeDetailActionTypes';
 

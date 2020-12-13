@@ -4,19 +4,17 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { fetchTvShowEpisodeDetails } from './tvShowEpisodeDetailActions';
-import { usePrevious } from '../../hooks/usePrevious';
 import TvShowEpisodeDescriptionSection from './TvShowEpisodeDescriptionSection';
 
 const TvShowEpisodeDetailPage = ({id, onComponentDidUpdate}) => {
     const { id: episodeIdFromParams } = useParams();
-
-    const prevId = usePrevious({ id });
+    const episodeIdFromParamsInt = parseInt(episodeIdFromParams);
 
     useEffect(() => {
-        if(prevId !== episodeIdFromParams) {
+        if(id !== episodeIdFromParamsInt) {
             onComponentDidUpdate && onComponentDidUpdate(episodeIdFromParams);
         }
-    }, [id, episodeIdFromParams])
+    }, [id])
 
     if(!!episodeIdFromParams){
         return (
@@ -26,6 +24,11 @@ const TvShowEpisodeDetailPage = ({id, onComponentDidUpdate}) => {
         );
     }
     return null;
+};
+const mapStateToProps = ({ tvShowEpisodeDetail: { id }}) => {
+    return {
+        id,
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -41,4 +44,4 @@ TvShowEpisodeDetailPage.propTypes = {
     onComponentDidUpdate: PropTypes.func,
 }
 
-export default connect(null, mapDispatchToProps)(TvShowEpisodeDetailPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TvShowEpisodeDetailPage);
