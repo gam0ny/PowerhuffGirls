@@ -1,15 +1,32 @@
-import {TV_SHOW_DETAILS__FETCH, TV_SHOW_DETAILS__UPDATE} from './tvShowDetailsActionTypes';
+import { TV_SHOW__DETAILS__FETCH, TV_SHOW__DETAILS__UPDATE,
+        TV_SHOW__EPISODES__FETCH, TV_SHOW__EPISODES__UPDATE } from './tvShowDetailsActionTypes';
 
-export const fetchTvShowDetails = (tvShowId) => {
+const endpoint = 'http://api.tvmaze.com';
+
+export const fetchTvShowEpisodes = (tvShowId) => {
     return (dispatch) => {
-        dispatch({ type: TV_SHOW_DETAILS__FETCH, payload: tvShowId });
+        dispatch({ type: TV_SHOW__EPISODES__FETCH, payload: tvShowId });
 
-        fetch(`http://api.tvmaze.com/shows/${tvShowId}`)
+        fetch(`${endpoint}/shows/${tvShowId}/episodes`)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                dispatch({  type: TV_SHOW_DETAILS__UPDATE, payload: data})
+                dispatch({  type: TV_SHOW__EPISODES__UPDATE, payload: data})
+            })
+    }
+}
+
+export const fetchTvShowDetails = (tvShowId) => {
+    return (dispatch) => {
+        dispatch({ type: TV_SHOW__DETAILS__FETCH, payload: tvShowId });
+
+        fetch(`${endpoint}/shows/${tvShowId}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                dispatch({  type: TV_SHOW__DETAILS__UPDATE, payload: data})
             });
     }
 };

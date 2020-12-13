@@ -26,7 +26,7 @@ TvShowDescriptionSection.propTypes = {
     OnLoaded: PropTypes.func,
 };
 
-const mapStateToProps = ({tvShowDetails: { name, image: { medium }, summary }}) => {
+const mapStateToProps = ({tvShowDetails: { details: { name, image: { medium }, summary } } }) => {
     return {
         title: name,
         coverImageSrc: medium,
