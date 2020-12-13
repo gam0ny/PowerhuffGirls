@@ -15,3 +15,22 @@
     margin: 0;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .tv-show-episode-detail {
+    padding: 0 30px;
+
+    &__container {
+      display: inline-block;
+    }
+
+    &__summary {
+      padding: 10px 0;
+    }
+
+    &__summary * {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

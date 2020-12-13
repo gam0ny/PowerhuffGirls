@@ -21,3 +21,30 @@
         align-items: center;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .tv-show-episode-list {
+        h2 {
+            padding: 0;
+        }
+        ul {
+            padding: 0;
+
+            li {
+                list-style-type: none;
+                border-radius: 3px;
+                background: #F7F7F7;
+                border: 1px solid #F7F7F7;
+                box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+                margin: 0 15px 15px 15px;
+                cursor: pointer;
+                min-width: 200px;
+            }
+        }
+        &__item {
+            font-size: 12px;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+}
