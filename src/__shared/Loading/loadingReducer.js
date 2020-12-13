@@ -6,6 +6,10 @@ import {
     TV_SHOW__EPISODES__FETCH_COMPLETED,
 
 } from '../../components/TvShowDetailsPage/tvShowDetailsActionTypes';
+import {
+    TV_SHOW__EPISODE__FETCH,
+    TV_SHOW__EPISODE__FETCH_COMPLETED,
+} from '../../components/TvShowEpisodeDetailPage/tvShowEpisodeDetailActionTypes';
 
 const initialState = {
     count: 0,
@@ -40,6 +44,20 @@ actions[TV_SHOW__EPISODES__FETCH_COMPLETED] = (state) => {
         count: state.count - 1,
     }
 }
+
+actions[TV_SHOW__EPISODE__FETCH] = (state) => {
+    return {
+        ...state,
+        count: state.count + 1,
+    }
+}
+
+actions[TV_SHOW__EPISODE__FETCH_COMPLETED] = (state) => {
+    return {
+        ...state,
+        count: state.count - 1,
+    }
+};
 
 
 export function loadingReducer (state = initialState, action) {

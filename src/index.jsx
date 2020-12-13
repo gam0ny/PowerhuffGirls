@@ -1,37 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {compose, createStore, applyMiddleware} from 'redux';
-import {Provider} from 'react-redux';
-import {Router, Route} from 'react-router';
-import {createBrowserHistory} from 'history';
-import {syncHistoryWithStore} from 'react-router-redux';
+import { Provider } from 'react-redux';
+import {Redirect, Route, Switch} from 'react-router';
+import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
+import { createBrowserHistory } from 'history'
 
 import './styles/index.scss';
 import reportWebVitals from './reportWebVitals';
-import {rootReducer} from './rootReducer';
+import { createRootReducer } from './rootReducer';
 import TvShowDetailsPage from './components/TvShowDetailsPage';
 import TvShowEpisodeDetailPage from './components/TvShowEpisodeDetailPage';
 import Loading from './__shared/Loading/Loading';
 
-const store = createStore(
-    rootReducer,
-    compose(
-        applyMiddleware(thunk),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    ),
-);
+export const history = createBrowserHistory();
 
-const reduxHistory = syncHistoryWithStore(createBrowserHistory(), store);
+export default function configureStore(preloadedState) {
+    const store = createStore(
+        createRootReducer(history), // root reducer with router state
+        preloadedState,
+        compose(
+            applyMiddleware(
+                routerMiddleware(history), // for dispatching history actions
+                thunk,
+            ),
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+        ),
+    )
+
+    return store;
+}
+
+const store = configureStore();
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <Loading />
-            <Router history={reduxHistory}>
-                <Route path={'/'} component={TvShowDetailsPage}/>
-                <Route path={'/episode'} component={TvShowEpisodeDetailPage}/>
-            </Router>
+            <ConnectedRouter history={history}>
+                <Loading />
+                <Switch>
+                    <Route exact path={'/episode/'}>
+                        <Redirect to={'/'} />
+                    </Route>
+                    <Route path={'/episode/:id'} component={TvShowEpisodeDetailPage}/>
+                    <Route exact path={'/'} component={TvShowDetailsPage}/>
+                </Switch>
+            </ConnectedRouter >
         </Provider>
     </React.StrictMode>,
     document.getElementById('root'),
