@@ -12,7 +12,7 @@ const TvShowDetailsPage = ({ onComponentDidMount }) => {
 
     useEffect(() => {
         onComponentDidMount && onComponentDidMount(tvShowId);
-    }, []);
+    }, [tvShowId]);
 
     return (
         <main>
