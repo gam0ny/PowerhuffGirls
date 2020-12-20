@@ -14,4 +14,5 @@ export const createRootReducer = (history) => combineReducers({
         episodes: tvShowEpisodesReducer,
     }),
     tvShowEpisodeDetail: tvShowEpisodeDetailReducer,
-});
+},
+);

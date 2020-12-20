@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import PropTypes from 'prop-types';
 
 import classNames from 'class-names';
@@ -10,25 +10,28 @@ const Image = ({className, src, width, height}) => {
 
     const figureClassNames = classNames(
         'image-wrapper',
-        { 'image-wrapper--loading': !isLoaded && !loadFailed},
+        {'image-wrapper--loading': !isLoaded && !loadFailed},
         className);
 
     const imageClassNames = classNames(
         'image-wrapper__image',
-        { 'image-wrapper__image--hidden': !isLoaded }
+        {'image-wrapper__image--hidden': !isLoaded}
     );
 
-    if(!src) return null;
+    if (!src) return null;
 
     return (
         <figure className={figureClassNames}
                 style={{minWidth: width, maxWidth: width, minHeight: height, maxHeight: height}}>
-            {loadFailed && <img className='image-wrapper__default-image' src={ noImageUrl } alt={'default image'}/>}
+            {loadFailed && <img className='image-wrapper__default-image' src={noImageUrl} alt={'default image'}/>}
             <img className={imageClassNames}
                  src={src}
                  alt={'target image'}
-                 onLoad={ () => setIsLoaded(true) }
-                 onError={ () => { setIsLoaded(false); setLoadFailed(true)} }
+                 onLoad={() => setIsLoaded(true)}
+                 onError={() => {
+                     setIsLoaded(false);
+                     setLoadFailed(true)
+                 }}
             />
         </figure>)
 };
