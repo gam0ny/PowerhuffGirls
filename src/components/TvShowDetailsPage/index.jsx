@@ -8,10 +8,11 @@ import TvShowEpisodesSection from './TvShowEpisodeListSection';
 
 const tvShowId = 6771;
 
-const TvShowDetailsPage = ({ onComponentDidMount }) => {
+const TvShowDetailsPage = ({ onGetTvShowDetails, onGetTvShowEpisodes }) => {
 
     useEffect(() => {
-        onComponentDidMount && onComponentDidMount(tvShowId);
+        onGetTvShowDetails && onGetTvShowEpisodes(tvShowId);
+        onGetTvShowEpisodes && onGetTvShowEpisodes(tvShowId);
     }, [tvShowId]);
 
     return (
@@ -24,15 +25,18 @@ const TvShowDetailsPage = ({ onComponentDidMount }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onComponentDidMount: (tvShowId) => {
-                dispatch(fetchTvShowDetails(tvShowId));
-                dispatch(fetchTvShowEpisodes(tvShowId));
-            }
+        onGetTvShowDetails: (tvShowId) => {
+            dispatch(fetchTvShowDetails(tvShowId));
+        },
+        onGetTvShowEpisodes: () => {
+            dispatch(fetchTvShowEpisodes(tvShowId));
+        }
     }
 };
 
 TvShowDetailsPage.propTypes = {
-    onComponentDidMount: PropTypes.func,
+    onGetTvShowDetails: PropTypes.func,
+    onGetTvShowEpisodes: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(TvShowDetailsPage);

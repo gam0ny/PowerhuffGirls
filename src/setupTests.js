@@ -4,5 +4,10 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 import { enableFetchMocks } from "jest-fetch-mock";
+import Enzyme from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 enableFetchMocks();
+
+Enzyme.configure({adapter: new Adapter()});
+

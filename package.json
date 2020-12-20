@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "class-names": "^1.0.0",
     "connected-react-router": "^6.8.0",
+    "enzyme": "^3.11.0",
     "history": "4.10.1",
     "jest-fetch-mock": "^3.0.3",
     "prop-types": "^15.7.2",
@@ -47,5 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1"
+  }
 }
