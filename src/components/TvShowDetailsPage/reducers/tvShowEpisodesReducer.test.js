@@ -9,7 +9,9 @@ const action = {
 describe('TV Show Episodes Reducer test', () => {
     it(`${TV_SHOW__EPISODES__UPDATE} test, that update is performed correctly`, () => {
 
-        const result = tvShowEpisodesReducer(initialState, action);
+        const stateBeforeAction = initialState;
+
+        const result = tvShowEpisodesReducer(stateBeforeAction, action);
 
         //Test, that
         expect(result).toEqual([...action.payload]);
@@ -17,7 +19,9 @@ describe('TV Show Episodes Reducer test', () => {
 
     it(`${TV_SHOW__EPISODES__UPDATE} test, that object has not mutated`, () => {
 
-        const result = tvShowEpisodesReducer(initialState, action);
+        const stateBeforeAction = initialState;
+
+        const result = tvShowEpisodesReducer(stateBeforeAction, action);
         //but references are different
         expect(result === action.payload).toBeFalsy();
     })

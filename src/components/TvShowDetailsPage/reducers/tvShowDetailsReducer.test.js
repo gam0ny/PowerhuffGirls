@@ -10,14 +10,20 @@ describe('TV Show Details Reducer tests', () => {
     };
 
     it(`${TV_SHOW__DETAILS__UPDATE} test, that update is performed`, () => {
-        expect(tvShowDetailsReducer(initialState, action)).toEqual({
+
+        const stateBeforeAction = initialState;
+
+        expect(tvShowDetailsReducer(stateBeforeAction, action)).toEqual({
             ...initialState,
             ...action.payload
         });
     });
 
     it(`${TV_SHOW__DETAILS__UPDATE} test, that object is not mutated`, () => {
-        const result = tvShowDetailsReducer(initialState, action);
+
+        const stateBeforeAction = initialState;
+        const result = tvShowDetailsReducer(stateBeforeAction, action);
+
         expect(result === action.payload).toBeFalsy();
     })
 })
