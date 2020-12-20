@@ -1,17 +1,17 @@
-import { runAction } from '../../reducerHelper';
+import { runAction } from '../../../reducerHelper';
 import {
     TV_SHOW__DETAILS__FETCH,
     TV_SHOW__DETAILS__FETCH_COMPLETED,
     TV_SHOW__EPISODES__FETCH,
     TV_SHOW__EPISODES__FETCH_COMPLETED,
 
-} from '../../components/TvShowDetailsPage/tvShowDetailsActionTypes';
+} from '../../TvShowDetailsPage/reducers/actionTypes';
 import {
     TV_SHOW__EPISODE__FETCH,
     TV_SHOW__EPISODE__FETCH_COMPLETED,
-} from '../../components/TvShowEpisodeDetailPage/tvShowEpisodeDetailActionTypes';
+} from '../../TvShowEpisodeDetailPage/reducers/actionTypes';
 
-const initialState = {
+export const initialState = {
     count: 0,
 };
 

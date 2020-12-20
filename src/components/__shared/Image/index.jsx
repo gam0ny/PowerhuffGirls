@@ -2,7 +2,7 @@ import {useState} from 'react';
 import PropTypes from 'prop-types';
 
 import classNames from 'class-names';
-import noImageUrl from '../../styles/images/default-image.jpg';
+import noImageUrl from '../../../styles/images/default-image.jpg';
 
 const Image = ({className, src, width, height}) => {
     const [isLoaded, setIsLoaded] = useState(false);

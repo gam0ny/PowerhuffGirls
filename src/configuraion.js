@@ -16,9 +16,11 @@ const configureStore = (preloadedState) => {
         routerMiddleware(history), // for dispatching history actions
         thunk,
       ),
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+      window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : compose,
     ),
   );
 };
 
 export const store = configureStore();
+
+export const endpoint = 'http://api.tvmaze.com';

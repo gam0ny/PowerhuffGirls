@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {push} from 'connected-react-router';
 
 import EpisodeListItem from './EpisodeListItem';
-import {TV_SHOW__EPISODE__UPDATE} from '../../TvShowEpisodeDetailPage/tvShowEpisodeDetailActionTypes';
+import {TV_SHOW__EPISODE__UPDATE} from '../../TvShowEpisodeDetailPage/reducers/actionTypes';
 
 const TvShowEpisodesSection = ({episodes, onItemClick}) => {
     if (episodes.length === 0) return null;

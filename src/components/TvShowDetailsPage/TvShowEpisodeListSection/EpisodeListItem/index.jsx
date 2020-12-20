@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import Image from '../../../../__shared/Image';
+import Image from '../../../__shared/Image';
 
 const EpisodeListItem = ({ title, coverImageUrl, airDate, seasonNumber, episodeNumber}) => (
     <section className={'tv-show-episode-list__item'}>

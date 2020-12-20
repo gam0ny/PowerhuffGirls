@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Image from '../../../__shared/Image';
+import Image from '../../__shared/Image';
 
 const TvShowDescriptionSection = ({title, coverImageSrc, description}) => (
     <article className="tv-show-description">

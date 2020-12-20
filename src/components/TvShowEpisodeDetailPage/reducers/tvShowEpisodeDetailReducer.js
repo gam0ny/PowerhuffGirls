@@ -1,8 +1,8 @@
-import { runAction } from '../../reducerHelper';
+import { runAction } from '../../../reducerHelper';
 import {
     TV_SHOW__EPISODE__FETCH,
     TV_SHOW__EPISODE__UPDATE,
-} from './tvShowEpisodeDetailActionTypes';
+} from './actionTypes';
 
 const initialState = {
     name: '',
@@ -14,10 +14,6 @@ const initialState = {
 };
 
 const actions = {};
-
-actions[TV_SHOW__EPISODE__FETCH] = (state) => {
-    return state;
-};
 
 actions[TV_SHOW__EPISODE__UPDATE] = (state, action) => {
     return {

@@ -5,7 +5,7 @@ import { Redirect, Route, Switch } from "react-router";
 import { ConnectedRouter } from "connected-react-router";
 
 import { history, store } from "./configuraion";
-import Loading from "./__shared/Loading/Loading";
+import Loading from "./components/__shared/Loading/Loading";
 import TvShowDetailsPage from "./components/TvShowDetailsPage";
 import TvShowEpisodeDetailPage from "./components/TvShowEpisodeDetailPage";
 import reportWebVitals from "./reportWebVitals";

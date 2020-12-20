@@ -1,7 +1,7 @@
-import { runAction } from '../../reducerHelper';
-import { TV_SHOW__DETAILS__FETCH, TV_SHOW__DETAILS__UPDATE } from './tvShowDetailsActionTypes';
+import { runAction } from '../../../reducerHelper';
+import { TV_SHOW__DETAILS__UPDATE } from './actionTypes';
 
-const initialState = {
+export const initialState = {
     name: '',
     summary: '',
     image: {
@@ -11,10 +11,6 @@ const initialState = {
 };
 
 const actions = {};
-
-actions[TV_SHOW__DETAILS__FETCH] = (state) => {
-    return state;
-}
 
 actions[TV_SHOW__DETAILS__UPDATE] = (state, action) => {
     return {

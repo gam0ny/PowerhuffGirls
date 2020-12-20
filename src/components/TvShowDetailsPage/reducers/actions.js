@@ -1,9 +1,9 @@
 import {
     TV_SHOW__DETAILS__FETCH, TV_SHOW__DETAILS__FETCH_COMPLETED, TV_SHOW__DETAILS__UPDATE,
     TV_SHOW__EPISODES__FETCH, TV_SHOW__EPISODES__FETCH_COMPLETED, TV_SHOW__EPISODES__UPDATE,
-} from './tvShowDetailsActionTypes';
+} from './actionTypes';
 
-const endpoint = 'http://api.tvmaze.com';
+import { endpoint } from "../../../configuraion";
 
 export const fetchTvShowDetails = (tvShowId) => {
     return (dispatch) => {

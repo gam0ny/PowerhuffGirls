@@ -2,9 +2,9 @@ import {
     TV_SHOW__EPISODE__FETCH,
     TV_SHOW__EPISODE__FETCH_COMPLETED,
     TV_SHOW__EPISODE__UPDATE,
-} from './tvShowEpisodeDetailActionTypes';
+} from './actionTypes';
 
-const endpoint = 'http://api.tvmaze.com';
+import { endpoint } from '../../../configuraion';
 
 export const fetchTvShowEpisodeDetails = (episodeId) => {
     return (dispatch) => {

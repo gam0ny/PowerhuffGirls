@@ -3,7 +3,7 @@ import {useEffect} from 'react';
 import {connect} from 'react-redux';
 
 import TvShowDescriptionSection from './TvShowDescriptionSection';
-import { fetchTvShowDetails, fetchTvShowEpisodes } from './tvShowDetailsActions';
+import { fetchTvShowDetails, fetchTvShowEpisodes } from './reducers/actions';
 import TvShowEpisodesSection from './TvShowEpisodeListSection';
 
 const tvShowId = 6771;
