@@ -3,19 +3,14 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Redirect, Route, Switch } from "react-router";
 import { ConnectedRouter } from "connected-react-router";
-import { createBrowserHistory } from "history";
 
-import configureStore from "./configuraion";
+import { history, store } from "./configuraion";
 import Loading from "./__shared/Loading/Loading";
 import TvShowDetailsPage from "./components/TvShowDetailsPage";
 import TvShowEpisodeDetailPage from "./components/TvShowEpisodeDetailPage";
 import reportWebVitals from "./reportWebVitals";
 
 import "./styles/index.scss";
-
-const store = configureStore();
-
-const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
