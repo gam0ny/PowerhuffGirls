@@ -1,4 +1,4 @@
-import { runAction } from '../../../reducerHelper';
+import { runAction } from '../../../helper';
 import {
     TV_SHOW__DETAILS__FETCH,
     TV_SHOW__DETAILS__FETCH_COMPLETED,

@@ -23,4 +23,4 @@ const configureStore = (preloadedState) => {
 
 export const store = configureStore();
 
-export const endpoint = 'http://api.tvmaze.com';
+export const API_ROOT = 'http://api.tvmaze.com';

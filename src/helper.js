@@ -7,3 +7,7 @@ export function runAction (actions, state, action) {
 
     return state;
 }
+
+export function printError(error, methodName) {
+    console.log(`Error in ${methodName}: `, error);
+}
