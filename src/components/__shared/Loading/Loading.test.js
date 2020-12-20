@@ -1,4 +1,5 @@
 import { shallow } from 'enzyme';
+import toJson from "enzyme-to-json";
 import { Provider } from "react-redux";
 import configureStore from 'redux-mock-store';
 import Loading from "./Loading";
@@ -36,5 +37,19 @@ describe('[Loading container] test', () => {
 
         expect(loadingContainer.find('div.loading').exists()).toBeFalsy();
 
+    });
+
+    it('Loading container renders correctly', () => {
+        const store = mockStore({
+            inProgress: true,
+        });
+
+        const loadingContainer = shallow(
+          <Provider store={store}>
+              <Loading />
+          </Provider>
+        );
+
+        expect(toJson(loadingContainer)).toMatchSnapshot();
     });
 })

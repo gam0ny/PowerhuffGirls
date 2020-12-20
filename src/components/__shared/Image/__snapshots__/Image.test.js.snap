@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Image] component test [Image] component renders properly 1`] = `
+<figure
+  className="image-wrapper image-wrapper--loading"
+  style={
+    Object {
+      "maxHeight": 100,
+      "maxWidth": 100,
+      "minHeight": 100,
+      "minWidth": 100,
+    }
+  }
+>
+  <img
+    alt="target image"
+    className="image-wrapper__image image-wrapper__image--hidden"
+    onError={[Function]}
+    onLoad={[Function]}
+    src="url"
+  />
+</figure>
+`;

@@ -4,21 +4,21 @@ import {connect} from 'react-redux';
 
 import TvShowDescriptionSection from './TvShowDescriptionSection';
 import { fetchTvShowDetails, fetchTvShowEpisodes } from './reducers/actions';
-import TvShowEpisodesSection from './TvShowEpisodeListSection';
+import TvShowEpisodeListSectionContainer from "./TvShowEpisodeListSection";
 
 const tvShowId = 6771;
 
 const TvShowDetailsPage = ({ onGetTvShowDetails, onGetTvShowEpisodes }) => {
 
     useEffect(() => {
-        onGetTvShowDetails && onGetTvShowEpisodes(tvShowId);
+        onGetTvShowDetails && onGetTvShowDetails(tvShowId);
         onGetTvShowEpisodes && onGetTvShowEpisodes(tvShowId);
     }, [tvShowId]);
 
     return (
         <main>
             <TvShowDescriptionSection />
-            <TvShowEpisodesSection />
+            <TvShowEpisodeListSectionContainer />
         </main>
     );
 };

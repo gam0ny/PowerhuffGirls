@@ -5,7 +5,7 @@ import {push} from 'connected-react-router';
 import EpisodeListItem from './EpisodeListItem';
 import {TV_SHOW__EPISODE__UPDATE} from '../../TvShowEpisodeDetailPage/reducers/actionTypes';
 
-const TvShowEpisodesSection = ({episodes, onItemClick}) => {
+export const TvShowEpisodeListSection = ({episodes, onItemClick}) => {
     if (episodes.length === 0) return null;
 
     return (<article className={'tv-show-episode-list'}>
@@ -26,7 +26,7 @@ const TvShowEpisodesSection = ({episodes, onItemClick}) => {
     </article>)
 };
 
-EpisodeListItem.propTypes = {
+TvShowEpisodeListSection.propTypes = {
     episodes: PropTypes.arrayOf(PropTypes.shape({
         ...EpisodeListItem.propTypes,
     })),
@@ -47,4 +47,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TvShowEpisodesSection);
+const TvShowEpisodeListSectionContainer = connect(mapStateToProps, mapDispatchToProps)(TvShowEpisodeListSection);
+
+export default TvShowEpisodeListSectionContainer;
