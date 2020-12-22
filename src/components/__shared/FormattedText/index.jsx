@@ -32,7 +32,7 @@ const FormattedText = ({ text, tag, className }) => {
 
 FormattedText.propTypes = {
     text: PropTypes.string,
-    tag: PropTypes.oneOf(Object.keys(TAGS)),
+    tag: PropTypes.oneOf(Object.values(TAGS)),
     className: PropTypes.string,
 };
 
