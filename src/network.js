@@ -2,8 +2,8 @@ import { API_ROOT } from "./configuraion";
 
 export const httpGet = (endpoint) => {
   try {
-    return fetch(`${API_ROOT}/${endpoint}`).
-      then((response) => {
+    return fetch(`${API_ROOT}/${endpoint}`)
+    .then((response) => {
         if (response.ok) {
           return response.json();
         } else {

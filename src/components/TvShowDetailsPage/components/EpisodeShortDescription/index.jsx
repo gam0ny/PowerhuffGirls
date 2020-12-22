@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import Image from '../../../__shared/Image';
 
-const EpisodeListItem = ({ title, coverImageUrl, airDate, seasonNumber, episodeNumber}) => (
+const EpisodeShortDescription = ({ title, coverImageUrl, airDate, seasonNumber, episodeNumber}) => (
     <section className={'tv-show-episode-list__item'}>
         <Image width={120} height={70} src={coverImageUrl} className={'tv-show-episode-list__image'}/>
         <div className={'tv-show-episode-list__description'}>
@@ -13,7 +13,7 @@ const EpisodeListItem = ({ title, coverImageUrl, airDate, seasonNumber, episodeN
     </section>
 )
 
-EpisodeListItem.propType = {
+EpisodeShortDescription.propType = {
     title: PropTypes.string,
     coverImageUrl: PropTypes.string,
     airDate: PropTypes.string,
@@ -21,4 +21,4 @@ EpisodeListItem.propType = {
     episodeNumber: PropTypes.number,
 }
 
-export default EpisodeListItem;
+export default EpisodeShortDescription;

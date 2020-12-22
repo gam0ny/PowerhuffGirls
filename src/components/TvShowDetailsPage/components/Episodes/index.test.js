@@ -13,8 +13,8 @@ const initialStore = {
 
 const mockStore = configureStore();
 
-describe('[TvShowEpisodeListSection] component test', () => {
-  it('[TvShowEpisodeListSection] component renders properly', () => {
+describe('[Episodes] component test', () => {
+  it('[Episodes] component renders properly', () => {
 
     const store = mockStore(initialStore);
 
@@ -26,7 +26,7 @@ describe('[TvShowEpisodeListSection] component test', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('[TvShowEpisodeListSection] onItemClick calls properly', () => {
+  it('[Episodes] onItemClick calls properly', () => {
 
       const component = shallow(<TvShowEpisodeListSection {...initialStore.tvShowDetails} />);
 

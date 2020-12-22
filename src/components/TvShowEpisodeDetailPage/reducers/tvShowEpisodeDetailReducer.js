@@ -1,6 +1,5 @@
 import { runAction } from '../../../helper';
 import {
-    TV_SHOW__EPISODE__FETCH,
     TV_SHOW__EPISODE__UPDATE,
 } from './actionTypes';
 

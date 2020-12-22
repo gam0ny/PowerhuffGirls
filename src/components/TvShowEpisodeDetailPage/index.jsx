@@ -14,7 +14,7 @@ const TvShowEpisodeDetailPage = ({id, onComponentDidUpdate}) => {
         if(id !== episodeIdFromParamsInt) {
             onComponentDidUpdate && onComponentDidUpdate(episodeIdFromParams);
         }
-    }, [id, onComponentDidUpdate])
+    })
 
     if(!!episodeIdFromParams){
         return (

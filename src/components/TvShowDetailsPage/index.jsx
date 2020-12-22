@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import {useEffect} from 'react';
-import {connect} from 'react-redux';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-import TvShowDescriptionSection from './TvShowDescriptionSection';
 import { fetchTvShowDetails, fetchTvShowEpisodes } from './reducers/actions';
-import TvShowEpisodeListSectionContainer from "./TvShowEpisodeListSection";
+import DescriptionContainer from './containers/DescriptionContainer';
+import EpisodesContainer from './containers/EpisodesContainer';
 
 const tvShowId = 6771;
 
@@ -13,12 +13,12 @@ const TvShowDetailsPage = ({ onGetTvShowDetails, onGetTvShowEpisodes }) => {
     useEffect(() => {
         onGetTvShowDetails && onGetTvShowDetails(tvShowId);
         onGetTvShowEpisodes && onGetTvShowEpisodes(tvShowId);
-    }, [tvShowId]);
+    });
 
     return (
         <main>
-            <TvShowDescriptionSection />
-            <TvShowEpisodeListSectionContainer />
+            <DescriptionContainer />
+            <EpisodesContainer />
         </main>
     );
 };

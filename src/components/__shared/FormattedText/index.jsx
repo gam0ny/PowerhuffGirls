@@ -23,7 +23,7 @@ const FormattedText = ({ text, tag, className }) => {
     switch(tag) {
         case TAGS.P: component = <p { ...params }></p>; break;
         case TAGS.SECTION:  component = <section { ...params }></section>; break;
-        case TAGS.DIV: component = <div { ...params }></div>
+        case TAGS.DIV: component = <div { ...params }></div>; break;
         default: component = null;
     }
 
@@ -32,7 +32,7 @@ const FormattedText = ({ text, tag, className }) => {
 
 FormattedText.propTypes = {
     text: PropTypes.string,
-    tag: PropTypes.oneOf([Object.keys(TAGS)]),
+    tag: PropTypes.oneOf(Object.keys(TAGS)),
     className: PropTypes.string,
 };
 

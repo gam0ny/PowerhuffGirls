@@ -18,22 +18,26 @@ const Image = ({className, src, width, height}) => {
         {'image-wrapper__image--hidden': !isLoaded}
     );
 
-    if (!src) return null;
+    let component = null;
 
-    return (
-        <figure className={figureClassNames}
-                style={{minWidth: width, maxWidth: width, minHeight: height, maxHeight: height}}>
-            {loadFailed && <img className='image-wrapper__default-image' src={noImageUrl} alt={'default image'}/>}
-            <img className={imageClassNames}
-                 src={src}
-                 alt={'target image'}
-                 onLoad={() => setIsLoaded(true)}
-                 onError={() => {
+    if(src) {
+        component =
+          <figure className={figureClassNames}
+                    style={{minWidth: width, maxWidth: width, minHeight: height, maxHeight: height}}>
+              {loadFailed && <img className='image-wrapper__default-image' src={noImageUrl} alt={'default'}/>}
+              <img className={imageClassNames}
+                   src={src}
+                   alt={'target'}
+                   onLoad={() => setIsLoaded(true)}
+                   onError={() => {
                      setIsLoaded(false);
                      setLoadFailed(true)
-                 }}
-            />
-        </figure>)
+                   }}
+              />
+          </figure>;
+    }
+
+    return component;
 };
 
 Image.propTypes = {
