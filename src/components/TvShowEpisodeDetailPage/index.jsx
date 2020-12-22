@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { fetchTvShowEpisodeDetails } from './reducers/actions';
-import TvShowEpisodeDescriptionSection from './TvShowEpisodeDescriptionSection';
+import EpisodeDescriptionContainer from './containers/EpisodeDescriptionContainer';
 
 const TvShowEpisodeDetailPage = ({id, onComponentDidUpdate}) => {
     const { id: episodeIdFromParams } = useParams();
@@ -19,7 +19,7 @@ const TvShowEpisodeDetailPage = ({id, onComponentDidUpdate}) => {
     if(!!episodeIdFromParams){
         return (
             <article>
-                <TvShowEpisodeDescriptionSection />
+                <EpisodeDescriptionContainer />
             </article>
         );
     }
